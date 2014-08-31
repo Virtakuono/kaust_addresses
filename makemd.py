@@ -58,7 +58,7 @@ for houseInd in range(len(houseNums)):
     print('  House %s is located at (%.7f, %.7f) - %s'%(houseNums[houseInd],lats[houseInd],lons[houseInd],osmlink(lats[houseInd],lons[houseInd])))
 
 mdLines = ['#KAUST Directory\n\n']
-mdLines.append('Based on (open street map)[http://www.openstreetmap.org] data and distributed under the relevant license terms. Big thanks to Heikki Lehvaslaiho. For feedback, email juho.happola@iki.fi.\n\n')
+mdLines.append('Based on %s data and distributed under the relevant license terms. Big thanks to Heikki Lehvaslaiho. For feedback, email juho.happola@iki.fi.\n\n'%(mdlink('open street map','http://openstreetmap.org/')))
 mdLines.append('#Island\n\n')
 for houseInd in range(len(houseNums)):
     if houseNums[houseInd][0] == 'I':
