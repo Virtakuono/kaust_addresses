@@ -50,6 +50,7 @@ for line in lines:
 print('Computing coordinates for each house...')
 
 osmlink = lambda lat,lon: 'http://www.openstreetmap.org/?mlat=%.7f&mlon=%.7f&zoom=15'%(lat,lon)
+mdlink = lambda title,url: '[%s](%s)'%(title,url)
 
 for houseInd in range(len(houseNums)):
     lats[houseInd] /= len(nodeSets[houseInd])
@@ -61,17 +62,17 @@ mdLines.append('Based on (open street map)[http://www.openstreetmap.org] data an
 mdLines.append('#Island\n\n')
 for houseInd in range(len(houseNums)):
     if houseNums[houseInd][0] == 'I':
-        mdLines.append('(%s)[%s]\n\n'%(houseNums[houseInd],osmlink(lats[houseInd],lons[houseInd]),))
+        mdLines.append('%s\n\n'%(mdlink(houseNums[houseInd],osmlink(lats[houseInd],lons[houseInd])),))
 
 mdLines.append('#Gardens\n\n')
 for houseInd in range(len(houseNums)):
     if houseNums[houseInd][0] == 'G':
-        mdLines.append('(%s)[%s]\n\n'%(houseNums[houseInd],osmlink(lats[houseInd],lons[houseInd]),))
+        mdLines.append('%s\n\n'%(mdlink(houseNums[houseInd],osmlink(lats[houseInd],lons[houseInd])),))
 
 mdLines.append('#Harbour\n\n')
 for houseInd in range(len(houseNums)):
     if houseNums[houseInd][0] == 'H':
-        mdLines.append('(%s)[%s]\n\n'%(houseNums[houseInd],osmlink(lats[houseInd],lons[houseInd]),))
+        mdLines.append('%s\n\n'%(mdlink(houseNums[houseInd],osmlink(lats[houseInd],lons[houseInd])),))
 
 f = open('README.md','w')
 f.writelines(mdLines)
