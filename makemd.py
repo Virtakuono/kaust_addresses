@@ -56,27 +56,24 @@ for houseInd in range(len(houseNums)):
     lons[houseInd] /= len(nodeSets[houseInd])
     print('  House %s is located at (%.7f, %.7f) - %s'%(houseNums[houseInd],lats[houseInd],lons[houseInd],osmlink(lats[houseInd],lons[houseInd])))
 
-mdLines = ['#KAUST Directory']
-mdLines.append('Based on (open street map)[http://www.openstreetmap.org] data and distributed under the relevant license terms. Big thanks to Heikki Lehvaslaiho. For feedback, email juho.happola@iki.fi.')
-mdLines.append('#Island')
+mdLines = ['#KAUST Directory\n']
+mdLines.append('Based on (open street map)[http://www.openstreetmap.org] data and distributed under the relevant license terms. Big thanks to Heikki Lehvaslaiho. For feedback, email juho.happola@iki.fi.\n')
+mdLines.append('#Island\n')
 for houseInd in range(len(houseNums)):
-    if houseNums[0] == 'I':
-        mdLines.append('(%s)[%s]'%(houseNums[houseInd],osmlink(lats[houseInd],lons[houseInd]),))
+    if houseNums[houseInd][0] == 'I':
+        mdLines.append('(%s)[%s]\n'%(houseNums[houseInd],osmlink(lats[houseInd],lons[houseInd]),))
 
-mdLines.append('#Gardens')
+mdLines.append('#Gardens\n')
 for houseInd in range(len(houseNums)):
-    if houseNums[0] == 'G':
-        mdLines.append('(%s)[%s]'%(houseNums[houseInd],osmlink(lats[houseInd],lons[houseInd]),))
+    if houseNums[houseInd][0] == 'G':
+        mdLines.append('(%s)[%s]\n'%(houseNums[houseInd],osmlink(lats[houseInd],lons[houseInd]),))
 
-mdLines.append('#Harbour')
+mdLines.append('#Harbour\n')
 for houseInd in range(len(houseNums)):
-    if houseNums[0] == 'H':
-        mdLines.append('(%s)[%s]'%(houseNums[houseInd],osmlink(lats[houseInd],lons[houseInd]),))
+    if houseNums[houseInd][0] == 'H':
+        mdLines.append('(%s)[%s]\n'%(houseNums[houseInd],osmlink(lats[houseInd],lons[houseInd]),))
 
-for line in mdLines:
-    line += '\n'
-
-f = open('README.MD','w')
+f = open('README.md','w')
 f.writelines(mdLines)
 f.close()
 
