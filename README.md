@@ -1,6 +1,6 @@
 #KAUST Directory
 
-Based on [open street map](http://openstreetmap.org/) data and distributed under the relevant license terms. Big thanks to Heikki Lehvaslaiho. For feedback, email juho.happola@iki.fi.
+Based on [open street map](http://openstreetmap.org/) data and distributed under the relevant license terms. Big thanks to Heikki Lehvaslaiho for providing the bulk of the data. Thanks also to Naoufal Uariachi for pointing out mistakes in the data. For feedback, email juho.happola@iki.fi.
 
 #Island
 
